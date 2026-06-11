@@ -1,67 +1,105 @@
 {
-  "head": {
-    "protocolVersion": "1.0",
-    "apiVersion": "1.0",
-    "device": {
-      "language": "fr",
-      "country": "FR"
-    }
-  },
-  "body": [
-    {
-      "setNode": {
-        "type": "root",
-        "id": "root",
-        "children": [
-          { "id": "test_channel" }
-        ]
-      }
-    },
+"head": {
+"protocolVersion": "1.0",
+"apiVersion": "1.0"
+},
+"body": [
+{
+"setNode": {
+"id": "root",
+"type": "root",
+"children": [
+{
+"id": "channel:test"
+}
+]
+}
+},
 
-    {
-      "setNode": {
-        "type": "channel",
-        "id": "test_channel",
-        "category": "test",
-        "children": [
-          { "id": "ep1" },
-          { "id": "ep2" },
-          { "id": "ep3" }
-        ]
-      }
+```
+{
+  "setNode": {
+    "id": "episode:test1",
+    "type": "episode",
+    "number": 1,
+    "ageRate": 0,
+    "title": "Test 1",
+    "description": "test",
+    "mediaUrls": {
+      "fr": "https://simscrafterz.github.io/nacserver/test.moflex",
+      "en": "https://simscrafterz.github.io/nacserver/test.moflex"
     },
-
-    {
-      "setNode": {
-        "type": "episode",
-        "id": "ep1",
-        "title": "Test 1",
-        "description": "test",
-        "category": "test",
-        "url": "https://example.com/test.moflex"
-      }
+    "viewCount": 0,
+    "imageUrls": {
+      "default": ""
     },
+    "agePrerollVideo": ""
+  }
+},
 
-    {
-      "setNode": {
-        "type": "episode",
-        "id": "ep2",
-        "title": "Test 2",
-        "description": "test",
-        "category": "test",
-        "url": "https://example.com/test.moflex"
-      }
+{
+  "setNode": {
+    "id": "episode:test2",
+    "type": "episode",
+    "number": 2,
+    "ageRate": 0,
+    "title": "Test 2",
+    "description": "test",
+    "mediaUrls": {
+      "fr": "https://simscrafterz.github.io/nacserver/test.moflex",
+      "en": "https://simscrafterz.github.io/nacserver/test.moflex"
     },
+    "viewCount": 0,
+    "imageUrls": {
+      "default": ""
+    },
+    "agePrerollVideo": ""
+  }
+},
 
-    {
-      "setNode": {
-        "type": "episode",
-        "id": "ep3",
-        "title": "Test 3",
-        "description": "test",
-        "category": "test",
-        "url": "https://example.com/test.moflex"
+{
+  "setNode": {
+    "id": "episode:test3",
+    "type": "episode",
+    "number": 3,
+    "ageRate": 0,
+    "title": "Test 3",
+    "description": "test",
+    "mediaUrls": {
+      "fr": "https://simscrafterz.github.io/nacserver/test.moflex",
+      "en": "https://simscrafterz.github.io/nacserver/test.moflex"
+    },
+    "viewCount": 0,
+    "imageUrls": {
+      "default": ""
+    },
+    "agePrerollVideo": ""
+  }
+},
+
+{
+  "setNode": {
+    "id": "channel:test",
+    "type": "channel",
+    "title": "test",
+    "eshopLinks": "",
+    "imageUrls": {
+      "default": ""
+    },
+    "children": [
+      {
+        "id": "episode:test1"
+      },
+      {
+        "id": "episode:test2"
+      },
+      {
+        "id": "episode:test3"
       }
-    }
-  ]
+    ]
+  }
+}
+```
+
+]
 }
