@@ -5,16 +5,14 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/catalog.json", (req, res) => {
+app.all("/catalog.json", (req, res) => {
+    console.log(req.method, JSON.stringify(req.body));
     res.sendFile(path.join(__dirname, "catalog.json"));
 });
 
-app.post("*", (req, res) => {
-    res.json({});
-});
+app.use(express.static(__dirname));
 
 const PORT = process.env.PORT || 10000;
-
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log("Server running on port " + PORT);
 });
