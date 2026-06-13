@@ -1,18 +1,15 @@
 const express = require("express");
-const path = require("path");
-
+const fs = require("fs");
 const app = express();
 
 app.use(express.json());
 
-app.all("/catalog.json", (req, res) => {
-    console.log(req.method, JSON.stringify(req.body));
-    res.sendFile(path.join(__dirname, "catalog.json"));
+const catalog = fs.readFileSync("catalog.json", "utf8");
+
+app.all("*", (req, res) => {
+    console.log(req.method, req.path);
+    res.setHeader("Content-Type", "application/json");
+    res.send(catalog);
 });
 
-app.use(express.static(__dirname));
-
-const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => {
-    console.log("Server running on port " + PORT);
-});
+app.listen(process.env.PORT || 10000);
