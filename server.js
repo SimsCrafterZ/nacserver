@@ -12,14 +12,21 @@ app.use((req, res, next) => {
     console.log("================================");
     console.log("METHOD:", req.method);
     console.log("URL:", req.originalUrl);
-    console.log("BODY:", JSON.stringify(req.body));
+
+    try {
+        console.log("BODY:");
+        console.log(JSON.stringify(req.body, null, 2));
+    } catch (e) {
+        console.log("BODY: <unable to parse>");
+    }
+
     next();
 });
 
-// Sert les fichiers statiques (.moflex, .3dst, etc.)
+// Sert les fichiers statiques (test.moflex, images, etc.)
 app.use(express.static(__dirname));
 
-// Charge catalog.json
+// Charge le catalogue
 function getCatalog() {
     return fs.readFileSync(
         path.join(__dirname, "catalog.json"),
@@ -27,7 +34,7 @@ function getCatalog() {
     );
 }
 
-// GET ou POST -> catalog.json
+// Répond au catalogue pour TOUTES les requêtes
 app.all("*", (req, res) => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).send(getCatalog());
