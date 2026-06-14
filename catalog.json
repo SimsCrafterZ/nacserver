@@ -4,7 +4,7 @@
 		"apiVersion": "1.0",
 		"playerDevMode": false,
 		"fromCache": true,
-		"serverName": "",
+		"serverName": "nac-server",
 		"processTime": "3.46ms",
 		"memoryUsage": "1.07 MB",
 		"memoryPeakUsage": "1.12 MB"
@@ -35,10 +35,10 @@
 				"number": 1,
 				"ageRate": 0,
 				"title": "Online test",
-				"description": "Discord moflex link",
+				"description": "Internet Archive moflex link",
 				"mediaUrls": {
-					"en": "https://cdn.discordapp.com/attachments/885556340599164929/886221030899716096/shawn_le_mouton.moflex",
-					"fr": "https://cdn.discordapp.com/attachments/885556340599164929/886221030899716096/shawn_le_mouton.moflex"
+					"en": "https://archive.org/download/krbay-nintendo-anime-channel/ENGLISH/KIRBY_ENGLISH_01.moflex",
+					"fr": "https://archive.org/download/krbay-nintendo-anime-channel/FRENCH/KIRBY_FRENCH_01.moflex"
 				},
 				"viewCount": 0,
 				"imageUrls": {
