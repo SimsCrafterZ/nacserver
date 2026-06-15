@@ -4,47 +4,45 @@ const fs = require("fs");
 
 const app = express();
 
-app.use(express.json({ limit: "10mb" }));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Logs
 app.use((req, res, next) => {
-    console.log("================================");
-    console.log("METHOD:", req.method);
-    console.log("URL:", req.originalUrl);
-
-    try {
-        console.log("BODY:");
-        console.log(JSON.stringify(req.body, null, 2));
-    } catch (e) {
-        console.log("BODY: <unable to parse>");
-    }
-
+    console.log("METHOD:", req.method, "URL:", req.originalUrl);
+    console.log("BODY:", req.body);
     next();
 });
 
-// Sert les fichiers statiques (test.moflex, images, etc.)
+// Static files (thumbnails + moflex)
 app.use(express.static(__dirname));
 
-// Charge le catalogue
-function getCatalog() {
-    return fs.readFileSync(
-        path.join(__dirname, "catalog.json"),
-        "utf8"
-    );
-}
+// Load catalog once
+const catalog = fs.readFileSync(
+    path.join(__dirname, "catalog.json"),
+    "utf8"
+);
 
-// Répond au catalogue pour TOUTES les requêtes
-app.all("*", (req, res) => {
+// 🟢 1. NAC catalog request
+app.post("/", (req, res) => {
     res.setHeader("Content-Type", "application/json");
-    res.status(200).send(getCatalog());
+    res.send(catalog);
+});
+
+// 🟡 2. viewCount increment (POST JSON dummy response)
+app.post("/incrementView", (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.send({ hello: "world" });
+});
+
+// 🔴 fallback POST (safe)
+app.post("*", (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.send({ ok: true });
 });
 
 const PORT = process.env.PORT || 10000;
 
 app.listen(PORT, () => {
-    console.log("================================");
-    console.log("NAC Revival Server Started");
-    console.log("Port:", PORT);
-    console.log("================================");
+    console.log("NAC server running on port", PORT);
 });
