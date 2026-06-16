@@ -1,0 +1,58 @@
+{
+	"setNode": {
+		"id": "episode:testvideo",
+		"type": "episode",
+		"number": 1,
+		"ageRate": 0,
+		"title": "test1",
+		"description": "test1.",
+		"mediaUrls": {
+			"en": "<http_location>/file.moflex",
+			"fr": "<http_location>/file.moflex"
+		},
+		"viewCount": 0,
+		"imageUrls": {
+			"default": "<http_location>/file.moflex/thumbnail.3dst"
+		},
+		"agePrerollVideo": ""
+	}
+},
+{
+	"setNode": {
+		"id": "episode:testvideo2",
+		"type": "episode",
+		"number": 2,
+		"ageRate": 0,
+		"title": "test2",
+		"description": "test2.",
+		"mediaUrls": {
+			"en": "<http_location>/file.moflex",
+			"fr": "<http_location>/file.moflex"
+		},
+		"viewCount": 0,
+		"imageUrls": {
+			"default": "<http_location>/file.moflex/thumbnail.3dst"
+		},
+		"agePrerollVideo": ""
+	}
+},
+
+{
+	"setNode": {
+		"id": "channel:testing_hosts",
+		"type": "channel",
+		"title": "Test videos",
+		"eshopLinks": "<http_location>",
+		"imageUrls": {
+			"default": "<http_location>/file.moflex/thumbnail.3dst"
+		},
+		"children": [
+			{
+				"id": "episode:testvideo"
+			},
+			{
+				"id": "episode:testvideo2"
+			}
+		]
+	}
+},

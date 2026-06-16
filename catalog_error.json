@@ -1,0 +1,55 @@
+{
+    "body": [
+        {
+            "setNode": {
+                "children": [
+                    {
+                        "id": "channel:category"
+                    }
+                ],
+                "id": "root",
+                "type": "root"
+            }
+        },
+        {
+            "setNode": {
+                "agePrerollVideo": "",
+                "ageRate": 1,
+                "description": "The test is successful...\n\nAlthough, your console's settings are corrupted...\nPlease check your console language and region settings.\n\nPress A to refresh the page.",
+                "id": "episode:video",
+                "imageUrls": {
+                    "default": "<http_location>/test123.3dst"
+                },
+                "mediaUrls": {
+                    "en": "<http_location>/refresh",
+                    "fr": "<http_location>/refresh",
+					"de": "<http_location>/refresh",
+					"es": "<http_location>/refresh",
+					"nl": "<http_location>/refresh",
+					"it": "<http_location>/refresh",
+					"pt": "<http_location>/refresh",
+					"ru": "<http_location>/refresh"
+                },
+                "number": 999,
+                "title": "Refresh Button",
+                "type": "episode"
+            }
+        },
+        {
+            "setNode": {
+                "children": [
+                    {
+                        "id": "episode:video"
+                    }
+                ],
+                "eshopLinks": "",
+                "id": "channel:category",
+                "imageUrls": {
+                    "default": ""
+                },
+                "title": "Successful Test!",
+                "type": "channel"
+            }
+        }
+    ]
+}

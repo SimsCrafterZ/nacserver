@@ -1,0 +1,56 @@
+{
+    "body": [
+		{
+            "setNode": {
+                "children": [
+                    {
+                        "id": "ayy"
+                    }
+                ],
+                "id": "root",
+                "type": "root"
+            }
+        },
+        {
+            "setNode": {
+                "agePrerollVideo": "",
+                "ageRate": 1,
+                "description": "The test is successful, and you're using the English Language catalog.\nPress A to refresh the page.",
+                "id": "yes",
+                "imageUrls": {
+                    "default": "<http_location>/test123.3dst"
+                },
+                "mediaUrls": {
+                    "en": "<http_location>/refresh",
+                    "fr": "<http_location>/refresh",
+					"de": "<http_location>/refresh",
+					"es": "<http_location>/refresh",
+					"nl": "<http_location>/refresh",
+					"it": "<http_location>/refresh",
+					"pt": "<http_location>/refresh",
+					"ru": "<http_location>/refresh"
+                },
+                "number": 999,
+                "title": "Refresh Button",
+                "type": "episode"
+            }
+        },
+        {
+            "setNode": {
+                "children": [
+                    {
+                        "id": "yes"
+                    }
+                ],
+                "eshopLinks": "",
+                "id": "ayy",
+                "imageUrls": {
+                    "default": ""
+                },
+                "title": "Successful Test!",
+                "type": "channel"
+            }
+        },
+		{}
+    ]
+}
